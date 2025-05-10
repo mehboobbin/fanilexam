@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoExam AI - Smart Exam Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    AutoExam<span>AI</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#upload">Create Exam</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-outline" id="loginBtn">Login</a>
+                    <a href="#" class="btn btn-primary" id="signupBtn">Sign Up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Exam Papers in Minutes</h1>
+            <p>AutoExam AI generates customized test papers by analyzing your syllabus and fetching relevant questions from trusted academic sources worldwide.</p>
+            
+            <div class="role-selector">
+                <div class="role-card teacher">
+                    <div class="role-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>For Teachers</h3>
+                    <p>Create perfectly balanced exams in minutes, not hours.</p>
+                    <a href="#upload" class="btn btn-teacher">Get Started</a>
+                </div>
+                
+                <div class="role-card student">
+                    <div class="role-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>For Students</h3>
+                    <p>Generate practice tests tailored to your syllabus.</p>
+                    <a href="#upload" class="btn btn-student">Try Now</a>
+                </div>
+                
+                <div class="role-card tutor">
+                    <div class="role-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>For Tutors</h3>
+                    <p>Create personalized worksheets for each student.</p>
+                    <a href="#upload" class="btn btn-tutor">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powerful Features for Academic Success</h2>
+                <p>AutoExam AI combines artificial intelligence with educational expertise to revolutionize exam preparation.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Syllabus-Aligned Questions</h3>
+                    <p>Our AI analyzes your uploaded syllabus to fetch perfectly matched questions from past papers and academic databases.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Bloom's Taxonomy Levels</h3>
+                    <p>Questions are categorized by cognitive levels (Remember, Understand, Apply, Analyze) for balanced exams.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>Time Estimation</h3>
+                    <p>Automatically calculates suggested time per question based on complexity and student level.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Smart Mark Distribution</h3>
+                    <p>Distributes marks according to topic weightage in syllabus and question difficulty.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3>Question Variations</h3>
+                    <p>Generates multiple versions of the same paper to prevent cheating in classroom settings.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3>Multiple Export Formats</h3>
+                    <p>Download as PDF, Word, or Google Forms. LMS integration available for schools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <div class="upload-container">
+                <h2>Create Your First Exam Paper</h2>
+                
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Upload Your Syllabus</h3>
+                    <p>Drag & drop your syllabus file here or click to browse</p>
+                    <p class="file-types">Supported formats: PDF, DOCX, PPT</p>
+                    <button class="btn btn-primary" id="uploadBtn">Select File</button>
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.ppt,.pptx">
+                </div>
+                
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label for="exam-type">Exam Type</label>
+                        <select id="exam-type" class="form-control">
+                            <option>Quiz</option>
+                            <option>Midterm</option>
+                            <option>Final Exam</option>
+                            <option>Practice Test</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <input type="number" id="duration" class="form-control" value="60">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="difficulty">Difficulty Level</label>
+                        <select id="difficulty" class="form-control">
+                            <option>Easy</option>
+                            <option selected>Medium</option>
+                            <option>Hard</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="total-marks">Total Marks</label>
+                        <input type="number" id="total-marks" class="form-control" value="100">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Question Types</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="mcq" checked>
+                            <label for="mcq">Multiple Choice (MCQs)</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="short-answer" checked>
+                            <label for="short-answer">Short Answer Questions</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="long-answer">
+                            <label for="long-answer">Long Answer/Essay Questions</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary generate-btn" id="generateBtn">
+                    Generate Exam Paper <i class="fas fa-magic"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AutoExam AI</h3>
+                    <p>The smartest way to create and practice exam papers powered by artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 AutoExam AI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
